@@ -8,11 +8,13 @@ Stable tag: 0.3
 
 Create multiple galleries using the default Gallery feature.
 
+
 == Description ==
 
 This plugin adds checkboxes next to images you have uploaded to a gallery in a post. Selecting checkboxes will include those images in that particular gallery.
 
 To create another gallery within the same post, simply choose 'Insert Gallery' and select the images.
+
 
 == Instructions ==
 
@@ -21,12 +23,13 @@ To create another gallery within the same post, simply choose 'Insert Gallery' a
 2.	To create another gallery on the same page, simply click in the area of text editor where you want to place it, and choose photos you want to include.
 
 
-== Other Notes ==
-
-= Changelog =
+== Changelog ==
 
 *	**0.3**: Fixed 2.9 compatibility. Use commas as seperators for ids of images (instead of spaces).
 *	**0.1**: Initial public release.
+
+
+== Other Notes ==
 
 == Screenshots ==
 
