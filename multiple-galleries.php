@@ -3,7 +3,7 @@
 Plugin Name: Multiple Galleries
 Plugin URI: http://konstruktors.com/blog/projects-services/wordpress-plugins/multiple-galleries/
 Description: Add multiple galleries per post using simple checkboxes for selecting images you want to include.
-Version: 0.4
+Version: 0.4.1
 Author: Kaspars Dambis
 Author URI: http://konstruktors.com/blog/
 */

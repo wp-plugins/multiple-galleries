@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=kaspa
 Tags: gallery, galleries, multiple, post, images, photos
 Requires at least: 2.8
 Tested up to: 3.2
-Stable tag: 0.4
+Stable tag: 0.4.1
 
 Create multiple galleries per page/post using the built-in Gallery feature.
 

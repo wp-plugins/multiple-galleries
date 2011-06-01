@@ -22,16 +22,19 @@ jQuery(document).ready(function(){
 	// Select parent editor, read existing gallery data	
 	w = wpgallery.getWin();
 	editor = w.tinymce.EditorManager.activeEditor;
-	gal = editor.selection.getNode();
+
+	if (editor !== null) {
+		gal = editor.selection.getNode();
 	
-	if (editor.dom.hasClass(gal, 'wpGallery')) {
-		$include = editor.dom.getAttrib(gal, 'title').match(/include=['"]([^'"]+)['"]/i);
-		var $is_update = true;
-		if ($include != null)
-			$include = $include[1];
-	} else {
-		jQuery('#insert-gallery').show();
-		jQuery('#update-gallery').hide();
+		if (editor.dom.hasClass(gal, 'wpGallery')) {
+			$include = editor.dom.getAttrib(gal, 'title').match(/include=['"]([^'"]+)['"]/i);
+			var $is_update = true;
+			if ($include != null)
+				$include = $include[1];
+		} else {
+			jQuery('#insert-gallery').show();
+			jQuery('#update-gallery').hide();
+		}
 	}
 	
 	// Check which images have been selected for inclusion
@@ -49,8 +52,11 @@ jQuery(document).ready(function(){
 	// Insert or update the actual shortcode
 	jQuery('#update-gallery, #insert-gallery, #save-all').mousedown(function() {
 		var $to_include = '';
-		var orig_gallery = editor.dom.decode(editor.dom.getAttrib(gal, 'title'));
-		
+		if (editor !== null)
+			var orig_gallery = editor.dom.decode(editor.dom.getAttrib(gal, 'title'));
+		else
+			var orig_gallery = '';
+
 		// Check which images have been selected to be included
 		jQuery('#media-items .media-item').each(function($count) {
 			$imgid = jQuery(this).attr('id').split('-')[2];
