@@ -1,4 +1,5 @@
 jQuery(document).ready(function(){
+	
 	// Run only if we have images to display
 	if (jQuery('#media-items > *').length == 0) 
 		return;
@@ -25,7 +26,7 @@ jQuery(document).ready(function(){
 	
 	if (editor.dom.hasClass(gal, 'wpGallery')) {
 		$include = editor.dom.getAttrib(gal, 'title').match(/include=['"]([^'"]+)['"]/i);
-		$is_update = true;
+		var $is_update = true;
 		if ($include != null)
 			$include = $include[1];
 	} else {
@@ -36,12 +37,10 @@ jQuery(document).ready(function(){
 	// Check which images have been selected for inclusion
 	jQuery('#media-items .media-item').each(function($count) {
 		var $imgid = jQuery(this).attr('id').split('-')[2];
-		
 		if ($include != null && $include.indexOf($imgid) != -1)
 			$is_checked = ' checked="checked" ';
 		else
-			$is_checked = '';
-			
+			$is_checked = '';	
 		jQuery('.menu_order', this).append(' <label class="include-in-gallery"><input type="checkbox" title="Include image in this gallery" id="include-in-gallery-'+$imgid+'" '+$is_checked+' value="" /></label>');
 	});		
 	
